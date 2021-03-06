@@ -53,7 +53,7 @@ class Dog
       dog_data = dog_lkp[0]
       dog = Dog.new(name: dog_data[1], breed: dog_data[2], id: dog_data[0])
     else
-      dog = Dog.creat(name: name, breed: breed)
+      dog = Dog.create(name: name, breed: breed)
     end
     dog
   end
