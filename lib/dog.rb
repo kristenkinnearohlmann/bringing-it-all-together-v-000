@@ -26,6 +26,10 @@ class Dog
     DB[:conn].execute("DROP TABLE dogs")
   end
 
+  def self.create(name:, breed:)
+
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO dogs
