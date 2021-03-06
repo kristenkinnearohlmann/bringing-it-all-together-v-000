@@ -58,6 +58,9 @@ class Dog
     dog
   end
 
+  def self.find_by_name(name)
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO dogs
