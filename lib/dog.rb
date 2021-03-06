@@ -42,7 +42,7 @@ class Dog
     dog_lkp = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)[0]
     if !dog_lkp.empty?
       dog_data = dog_lkp[0]
-      dog = Dog.create(name: dog_data[1], breed: dog_data[2], id: dog_data[0])
+      dog = Dog.new(name: dog_data[1], breed: dog_data[2], id: dog_data[0])
       dog
     end
   end
@@ -62,7 +62,7 @@ class Dog
     dog_lkp = DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", name)
     if !dog_lkp.empty?
       dog_data = dog_lkp[0]
-      dog = Dog.create(name: dog_data[1], breed: dog_data[2], id: dog_data[0])
+      dog = Dog.new(name: dog_data[1], breed: dog_data[2], id: dog_data[0])
       dog
     end
   end
