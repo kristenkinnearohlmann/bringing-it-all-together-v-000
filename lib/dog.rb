@@ -67,6 +67,9 @@ class Dog
     end
   end
 
+  def update
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO dogs
