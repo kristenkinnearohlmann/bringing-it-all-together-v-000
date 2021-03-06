@@ -38,7 +38,13 @@ class Dog
     dog
   end
 
-  def self.find_by_id
+  def self.find_by_id(id)
+    dog_lkp = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)[0]
+    if !dog_lkp.empty?
+      dog_data = dog_lkp[0]
+      dog = Dog.new(dog_data[1], dog_data[2], dog_data[0])
+      dog
+    end
   end
 
   def save
